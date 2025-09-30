@@ -55,13 +55,34 @@ Asimismo, la integración de SQL Server con el sistema garantiza que los datos s
 
 ## CAPÍTULO III: METODOLOGÍA SEGUIDA
 
-Donec lobortis tincidunt erat, non egestas mi volutpat in. Cras ante purus, luctus sed fringilla non, ullamcorper at eros.
+**a) Cómo se realizó el Trabajo Práctico**  
+Nuestro caso de estudio se dividió en 6 fases, las cuales se detallan a continuación:
 
- **a) Cómo se realizó el Trabajo Práctico**
-Vestibulum rutrum feugiat molestie. Nunc id varius augue. Ut augue mauris, venenatis et lacus ut, mattis blandit urna. Fusce lobortis, quam non vehicula scelerisque, nisi enim ultrices diam, ac tristique libero ex nec orci.
+**Fases del desarrollo**  
+- **Fase de elección de caso de estudio:** La elección del caso de estudio fue realizada sin complicaciones ni objeciones por parte de ningún integrante del grupo. Primero nos inclinamos hacia la gestión de un hospital debido a contar con bastante información sobre ese tipo de sistemas, pero finalmente decidimos hacerlo sobre una distribuidora de alimentos, ya que un integrante del grupo tiene acceso a un ERP (Enterprise Resource Planning). Esto nos permitió trabajar de una manera más profesional y fiel a lo que se usa en el mundo corporativo real.  
 
- **b) Herramientas (Instrumentos y procedimientos)**
-Donec lobortis tincidunt erat, non egestas mi volutpat in. Cras ante purus, luctus sed fringilla non, ullamcorper at eros. Integer interdum id orci id rutrum. Curabitur facilisis lorem sed metus interdum accumsan.
+- **Fase del diseño conceptual:** Esta fase fue llevada en gran parte por dos integrantes del grupo que ya estaban trabajando en un proyecto similar en la materia *Taller de Programación 2*. Por ello, ya tenían desarrollado un diseño conceptual previo, el cual fue explicado al resto del grupo. Luego de un intercambio de ideas, lo ajustamos en conjunto y obtuvimos la versión final.  
+
+- **Fase del diseño Modelo Entidad-Relación (ER):** Una vez definido y consolidado el concepto general de nuestra base de datos, elaboramos un diagrama entidad-relación (DER). En este esquema representamos gráficamente las entidades principales, junto con sus atributos más relevantes. También dejamos claramente establecidas las relaciones entre ellas, lo que permitió visualizar la estructura lógica de los datos, identificar dependencias y asegurar coherencia antes de pasar a la fase de desarrollo.  
+
+- **Fase de desarrollo:** En esta fase cada integrante trabajó en su parte del proyecto, y a su vez cada tema se dividió en dos instancias: desarrollo del script y creación de la documentación. Entre los temas desarrollados se encuentran:  
+  - Manejo de permisos a nivel de usuarios de base de datos.  
+  - Procedimientos y funciones almacenadas.  
+  - Optimización de consultas a través de índices.  
+  - Triggers.  
+
+- **Fase de explicación de temas:** Una vez listos los scripts, organizamos una charla grupal en la que cada integrante explicó qué le había tocado, cómo lo resolvió y cuáles eran las partes más importantes de su trabajo. Algunos mostraron pasos técnicos, otros compartieron tips o problemas que tuvieron. Esto nos permitió tener una visión integral del trabajo de todos y no solo de la parte individual.  
+
+- **Fase final:** Finalmente, realizamos una revisión completa y detallada del proyecto. Repasamos punto por punto el repositorio, la documentación y el código con el objetivo de detectar errores o detalles pasados por alto. Gracias a este repaso, logramos corregir a tiempo y dejar el proyecto en condiciones óptimas antes de darlo por finalizado.  
+
+---
+
+**b) Herramientas (Instrumentos y procedimientos)**  
+Para llevar adelante el trabajo utilizamos un conjunto de herramientas básicas pero efectivas:  
+
+- **GitHub:** Para el control de versiones y la colaboración grupal en un repositorio compartido.  
+- **SQL Server:** Como motor de base de datos para la implementación de scripts, pruebas y validación.  
+- **Visual Studio Code:** Para la edición de código y documentación en un entorno sencillo y práctico.  
 
 ## CAPÍTULO IV: DESARROLLO DEL TEMA / PRESENTACIÓN DE RESULTADOS
 
