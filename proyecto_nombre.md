@@ -1,4 +1,4 @@
-# Proyecto de Estudio: (Título/Nombre Proyecto)
+# Proyecto de Estudio: ARIMA
 
 **Asignatura**: Bases de Datos I (FaCENA-UNNE)
 
@@ -29,7 +29,7 @@ Ejecutar los conceptos teoricos y practicos aprendidos en las clases y examenes 
 
 #### Objetivos Específicos
 
-Objetivo funcional: soportar la gestión básica de un negocio de venta de productos mediante módulos de administración de productos, gestión de clientes y preventistas, procesamiento de ventas/pedidos y generación de reportes administrativos.
+Soportar la gestión básica de un negocio de venta de productos mediante módulos de administración de productos, gestión de clientes y preventistas, procesamiento de ventas/pedidos y generación de reportes administrativos.
 
 ## CAPITULO II: MARCO CONCEPTUAL O REFERENCIAL
 
@@ -59,6 +59,7 @@ Asimismo, la integración de SQL Server con el sistema garantiza que los datos s
 Nuestro caso de estudio se dividió en 6 fases, las cuales se detallan a continuación:
 
 **Fases del desarrollo**  
+
 - **Fase de elección de caso de estudio:** La elección del caso de estudio fue realizada sin complicaciones ni objeciones por parte de ningún integrante del grupo. Primero nos inclinamos hacia la gestión de un hospital debido a contar con bastante información sobre ese tipo de sistemas, pero finalmente decidimos hacerlo sobre una distribuidora de alimentos, ya que un integrante del grupo tiene acceso a un ERP (Enterprise Resource Planning). Esto nos permitió trabajar de una manera más profesional y fiel a lo que se usa en el mundo corporativo real.  
 
 - **Fase del diseño conceptual:** Esta fase fue llevada en gran parte por dos integrantes del grupo que ya estaban trabajando en un proyecto similar en la materia *Taller de Programación 2*. Por ello, ya tenían desarrollado un diseño conceptual previo, el cual fue explicado al resto del grupo. Luego de un intercambio de ideas, lo ajustamos en conjunto y obtuvimos la versión final.  
@@ -90,23 +91,11 @@ Maecenas molestie lacus tincidunt, placerat dolor et, ullamcorper erat. Mauris t
 
 ### Diagrama conceptual (opcional)
 
-Ejemplo usando Live Editor <https://mermaid.js.org/> (ejemplo opcional)
-
-```mermaid
-erDiagram
-CUSTOMER  }|..|{  DELIVERY-ADDRESS  : has
-CUSTOMER  ||--o{  ORDER  : places
-CUSTOMER  ||--o{  INVOICE  : "liable for"
-DELIVERY-ADDRESS  ||--o{  ORDER  : receives
-INVOICE  ||--|{  ORDER  : covers
-ORDER  ||--|{  ORDER-ITEM  : includes
-PRODUCT-CATEGORY  ||--|{  PRODUCT  : contains
-PRODUCT  ||--o{  ORDER-ITEM  : "ordered in"
-```
+![Diagrama relacional de la distribuidora](doc/diagrama_conceptual.png)
 
 ### Diagrama relacional
 
-![diagrama_relacional](https://github.com/CodinRes/Proyecto_Base_de_Datos_1-2025-Grupo_2/tree/main/doc/esquema_relacional_distribuidora.png)
+![Diagrama relacional de la distribuidora](doc/esquema_relacional_distribuidora.png)
 
 ### Diccionario de datos
 

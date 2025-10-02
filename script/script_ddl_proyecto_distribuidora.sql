@@ -1,5 +1,8 @@
-create database distribuidora;
-use distribuidora;
+CREATE DATABASE distribuidora;
+
+GO
+USE distribuidora;
+GO
 
 CREATE TABLE rol
 (
@@ -28,8 +31,7 @@ CREATE TABLE familia
   CONSTRAINT pk_familia PRIMARY KEY (familia_id),
   CONSTRAINT uq_familia_descripcion UNIQUE (descripcion),
   CONSTRAINT ck_familia_descripcion CHECK (LTRIM(RTRIM(descripcion)) <> ''),
-  CONSTRAINT ck_familia_tipos CHECK (descripcion IN('Comidas', 'Bebidas', 'Lácteos', 'Higiene 
-Personal', 'Bebidas alcohólicas', 'Cuidado Doméstico', 'Pilas–Velas–Encendedores'))
+  CONSTRAINT ck_familia_tipos CHECK (descripcion IN('Comidas', 'Bebidas', 'LÃ¡cteos', 'Higiene Personal', 'Bebidas alcohÃ³licas', 'Cuidado DomÃ©stico', 'Pilas, Velas, Encendedores'))
 );
 
 CREATE TABLE categoria_negocio
@@ -39,7 +41,7 @@ CREATE TABLE categoria_negocio
   CONSTRAINT pk_categoria_negocio PRIMARY KEY (categoria_id),
   CONSTRAINT uq_categoria_negocio_descripcion UNIQUE (descripcion),
   CONSTRAINT ck_categoria_negocio_descripcion CHECK (LTRIM(RTRIM(descripcion)) <> ''),
-  CONSTRAINT ck_categoria_negocio_descrip CHECK (descripcion IN ('Pequeño', 'Mediano', 'Grande'))
+  CONSTRAINT ck_categoria_negocio_descrip CHECK (descripcion IN ('Pequeï¿½o', 'Mediano', 'Grande'))
 
 
 );
@@ -50,7 +52,7 @@ CREATE TABLE estado
   descripcion VARCHAR (20) COLLATE Latin1_General_CI_AI NOT NULL,
   CONSTRAINT pk_estado PRIMARY KEY (estado_id),
   CONSTRAINT uq_estado_descripcion UNIQUE (descripcion),
-  CONSTRAINT ck_estado_descripcion CHECK (descripcion IN ('Pendiente', 'En preparación', 'Entregado', 'Cancelado', 'Retrasado'))
+  CONSTRAINT ck_estado_descripcion CHECK (descripcion IN ('Pendiente', 'En preparaciï¿½n', 'Entregado', 'Cancelado', 'Retrasado'))
 );
 
 CREATE TABLE metodo_pago
@@ -59,7 +61,7 @@ CREATE TABLE metodo_pago
   descripcion VARCHAR (20) COLLATE Latin1_General_CI_AI NOT NULL,
   CONSTRAINT pk_metodo_pago PRIMARY KEY (metodo_id),
   CONSTRAINT uq_metodo_pago_descripcion UNIQUE (descripcion),
-  CONSTRAINT ck_metodo_pago_descripcion CHECK (descripcion IN ('Efectivo', 'Transferencia', 'Tarjeta Crédito', 'Tarjeta Débito'))
+  CONSTRAINT ck_metodo_pago_descripcion CHECK (descripcion IN ('Efectivo', 'Transferencia', 'Tarjeta Crï¿½dito', 'Tarjeta Dï¿½bito'))
 
 );
 
@@ -101,14 +103,14 @@ CREATE TABLE provincia
 
 CREATE TABLE usuario
 (
-  usuario_id INT IDENTITY (1,1) NOT NULL,  
-  contraseña VARCHAR (450) NOT NULL,
-  estado BIT NOT NULL DEFAULT 1,  
+  usuario_id INT IDENTITY (1,1) NOT NULL,
+  clave VARCHAR (450) NOT NULL,
+  estado BIT NOT NULL DEFAULT 1,
   nombre_usuario VARCHAR (20) NOT NULL,
   fecha_alta DATE NOT NULL DEFAULT (CAST(GETDATE() AS DATE)),
   rol_id INT NOT NULL,
   CONSTRAINT pk_usuario PRIMARY KEY (usuario_id),
-  CONSTRAINT fk_usuario_rol FOREIGN KEY (rol_id) REFERENCES rol(rol_id),  
+  CONSTRAINT fk_usuario_rol FOREIGN KEY (rol_id) REFERENCES rol(rol_id),
   CONSTRAINT fk_usuario_nombre_usuario UNIQUE (nombre_usuario)
 );
 
