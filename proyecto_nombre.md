@@ -5,9 +5,9 @@
 **Integrantes**:
 
 - Samuel Zini
-- Gaston
+- Gaston Nicolas Fernandez
 - Mercedes Silvana Fernández
-- Hugo elias
+- Hugo Fernando Elias
 
 **Año**: 2025
 
@@ -81,9 +81,10 @@ Nuestro caso de estudio se dividió en 6 fases, las cuales se detallan a continu
 **b) Herramientas (Instrumentos y procedimientos)**  
 Para llevar adelante el trabajo utilizamos un conjunto de herramientas básicas pero efectivas:  
 
-- **GitHub:** Para el control de versiones y la colaboración grupal en un repositorio compartido.  
-- **SQL Server:** Como motor de base de datos para la implementación de scripts, pruebas y validación.  
-- **Visual Studio Code:** Para la edición de código y documentación en un entorno sencillo y práctico.  
+- **GitHub:** Para el control de versiones y la colaboración grupal en un repositorio compartido.
+- **SQL Server:** Como motor de base de datos para la implementación de scripts, pruebas y validación.
+- **Visual Studio Code:** Para la edición de código y documentación en un entorno sencillo y práctico.
+- **ERDPlus:** Para graficar en un esquema entidad relacion el modelo fisico.
 
 ## CAPÍTULO IV: DESARROLLO DEL TEMA / PRESENTACIÓN DE RESULTADOS
 
@@ -100,29 +101,3 @@ Maecenas molestie lacus tincidunt, placerat dolor et, ullamcorper erat. Mauris t
 ### Diccionario de datos
 
 Acceso al documento [PDF](doc/diccionario_datos.pdf) del diccionario de datos.
-
-### Desarrollo TEMA 1 "----"
-
-Fusce auctor finibus lectus, in aliquam orci fermentum id. Fusce sagittis lacus ante, et sodales eros porta interdum. Donec sed lacus et eros condimentum posuere.
-
-> Acceder a la siguiente carpeta para la descripción completa del tema [scripts-> tema_1](script/tema01_nombre_tema)
-
-### Desarrollo TEMA 2 "----"
-
-Proin aliquet mauris id ex venenatis, eget fermentum lectus malesuada. Maecenas a purus arcu. Etiam pellentesque tempor dictum.
-
-> Acceder a la siguiente carpeta para la descripción completa del tema [scripts-> tema_2](script/tema02_nombre_tema)
-
-...
-
-## CAPÍTULO V: CONCLUSIONES
-
-Nunc sollicitudin purus quis ante sodales luctus. Proin a scelerisque libero, vitae pharetra lacus. Nunc finibus, tellus et dictum semper, nisi sem accumsan ligula, et euismod quam ex a tellus.
-
-## BIBLIOGRAFÍA DE CONSULTA
-
- 1. List item
- 2. List item
- 3. List item
- 4. List item
- 5. List item
