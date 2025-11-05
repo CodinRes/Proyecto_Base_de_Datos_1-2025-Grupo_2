@@ -98,6 +98,33 @@ Maecenas molestie lacus tincidunt, placerat dolor et, ullamcorper erat. Mauris t
 
 ![Diagrama relacional de la distribuidora](doc/esquema_relacional_distribuidora.png)
 
-### Diccionario de datos
+## Diccionario de datos
+Acceso al documento **PDF** del diccionario de datos.
 
-Acceso al documento [PDF](doc/diccionario_datos.pdf) del diccionario de datos.
+---
+
+## Manejo de permisos a nivel de usuarios de base de datos
+En este tema, exploramos cómo definir, asignar y gestionar permisos de usuarios, desde permisos básicos de lectura/escritura hasta configuraciones avanzadas de roles e inicios de sesión.
+
+> Acceder a la descripción completa del tema: **[Manejo de permisos a nivel de BD](./scripts/Manejo%20de%20permisos%20a%20nivel%20de%20BD/)**
+
+---
+
+## Optimización de consultas a través de índices
+Cómo los índices pueden acelerar las búsquedas, reducir el tiempo de respuesta y mejorar el rendimiento general del sistema. Tipos de índices, cuándo aplicarlos y una comparación práctica de su eficiencia.
+
+> Acceder a la descripción completa del tema: **[Optimización de consultas a través de índices](./scripts/Optimización%20de%20consultas%20a%20través%20de%20índices/)**
+
+---
+
+## Procedimientos y funciones almacenadas
+Cómo los procedimientos almacenados automatizan tareas repetitivas, gestionan transacciones y mejoran el control de los datos; y cómo las funciones almacenadas facilitan cálculos y transformaciones en tiempo real.
+
+> Acceder a la descripción completa del tema: **[Procedimientos y funciones almacenadas](./script/Procedimientos%20y%20funciones%20almacenadas/)**
+
+---
+
+## Triggers
+Cómo los triggers ayudan a automatizar auditorías, mantener reglas de negocio y reaccionar a cambios en tiempo real.
+
+> Acceder a la descripción completa del tema: **[Triggers](./script/Triggers/)**
