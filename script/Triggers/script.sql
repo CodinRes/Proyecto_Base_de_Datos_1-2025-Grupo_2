@@ -1,8 +1,6 @@
 /* ============================================================
-   AUDITORÍAS DISTRIBUIDORA – ESTILO "POR TABLA" (T-SQL)
-   Basado en el patrón del proyecto IntegradorBDI (triggers por tabla).
+   AUDITORÍAS DISTRIBUIDORA 
    ============================================================ */
-
 ---------------------------------------------------------------
 -- PRODUCTO
 ---------------------------------------------------------------
@@ -21,8 +19,6 @@ BEGIN
             FECHA         DATETIME    NOT NULL,
             USUARIOBD     VARCHAR(128) NOT NULL,
             OPERACION     VARCHAR(10)  NOT NULL
-            -- Opcional: FK a PRODUCTO si no vas a borrar físico
-            -- ,CONSTRAINT FK_AUD_PROD_PRODUCTO FOREIGN KEY(ID_PRODUCTO) REFERENCES dbo.PRODUCTO(ID_PRODUCTO)
         );
     END;
 
@@ -104,7 +100,7 @@ BEGIN
     END;
     GO
 
-    -- Bloqueo de DELETE en CLIENTE (puedes moverlo a otra tabla si preferís)
+    -- Bloqueo de DELETE en CLIENTE 
     IF OBJECT_ID('dbo.TRG_DELETE_BLOCK_CLIENTE','TR') IS NOT NULL DROP TRIGGER dbo.TRG_DELETE_BLOCK_CLIENTE;
     GO
     CREATE TRIGGER dbo.TRG_DELETE_BLOCK_CLIENTE
@@ -113,8 +109,6 @@ BEGIN
     BEGIN
         SET NOCOUNT ON;
         PRINT 'No se permite la eliminación de registros en CLIENTE. Use baja lógica o contacte al administrador.';
-        -- Nota: Si querés forzar error en lugar de PRINT, usa RAISERROR con severidad 16 y ROLLBACK.
-        -- RAISERROR('No se permite la eliminación...',16,1); ROLLBACK TRANSACTION; RETURN;
     END;
     GO
 END
