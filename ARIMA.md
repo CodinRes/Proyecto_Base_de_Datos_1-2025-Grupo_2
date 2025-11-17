@@ -11,6 +11,26 @@
 
 **Año**: 2025
 
+- [Proyecto de Estudio: ARIMA](#proyecto-de-estudio-arima)
+  - [CAPÍTULO I: INTRODUCCIÓN](#capítulo-i-introducción)
+    - [Caso de estudio](#caso-de-estudio)
+    - [Definición o planteamiento del problema](#definición-o-planteamiento-del-problema)
+    - [Objetivo del Trabajo Práctico](#objetivo-del-trabajo-práctico)
+      - [Objetivos Generales](#objetivos-generales)
+      - [Objetivos Específicos](#objetivos-específicos)
+  - [CAPITULO II: MARCO CONCEPTUAL O REFERENCIAL](#capitulo-ii-marco-conceptual-o-referencial)
+  - [CAPÍTULO III: METODOLOGÍA SEGUIDA](#capítulo-iii-metodología-seguida)
+  - [CAPÍTULO IV: DESARROLLO DE LOS TEMAS / PRESENTACIÓN DE RESULTADOS](#capítulo-iv-desarrollo-de-los-temas--presentación-de-resultados)
+    - [Diseño de la base de datos](#diseño-de-la-base-de-datos)
+      - [Diagrama conceptual (opcional)](#diagrama-conceptual-opcional)
+      - [Diagrama relacional](#diagrama-relacional)
+      - [Diccionario de datos](#diccionario-de-datos)
+  - [Temas de investigación desarrollados](#temas-de-investigación-desarrollados)
+    - [Tema 1: Procedimientos y funciones almacenadas](#tema-1-procedimientos-y-funciones-almacenadas)
+    - [Tema 2: Optimización de consultas a través de índices](#tema-2-optimización-de-consultas-a-través-de-índices)
+    - [Tema 3: Manejo de transacciones y transacciones anidadas](#tema-3-manejo-de-transacciones-y-transacciones-anidadas)
+    - [Tema 4: Triggers](#tema-4-triggers)
+
 ## CAPÍTULO I: INTRODUCCIÓN
 
 ### Caso de estudio
@@ -86,45 +106,56 @@ Para llevar adelante el trabajo utilizamos un conjunto de herramientas básicas 
 - **Visual Studio Code:** Para la edición de código y documentación en un entorno sencillo y práctico.
 - **ERDPlus:** Para graficar en un esquema entidad relacion el modelo fisico.
 
-## CAPÍTULO IV: DESARROLLO DEL TEMA / PRESENTACIÓN DE RESULTADOS
+## CAPÍTULO IV: DESARROLLO DE LOS TEMAS / PRESENTACIÓN DE RESULTADOS
 
-Maecenas molestie lacus tincidunt, placerat dolor et, ullamcorper erat. Mauris tortor nisl, ultricies ac scelerisque nec, feugiat in nibh. Pellentesque interdum aliquam magna sit amet rutrum.
+Antes de desarrollar los temas se muestran imagenes ilustrativas de como queda el diseño de la base de datos.
 
-### Diagrama conceptual (opcional)
+### Diseño de la base de datos
+
+#### Diagrama conceptual (opcional)
 
 ![Diagrama relacional de la distribuidora](doc/diagrama_conceptual.png)
 
-### Diagrama relacional
+#### Diagrama relacional
 
 ![Diagrama relacional de la distribuidora](doc/esquema_relacional_distribuidora.png)
 
-## Diccionario de datos
-Acceso al documento **PDF** del diccionario de datos.
+#### Diccionario de datos
+
+Acceso al documento **[PDF](./doc/diccionario_datos.pdf)** del diccionario de datos.
 
 ---
 
-## Manejo de permisos a nivel de usuarios de base de datos
-En este tema, exploramos cómo definir, asignar y gestionar permisos de usuarios, desde permisos básicos de lectura/escritura hasta configuraciones avanzadas de roles e inicios de sesión.
+## Temas de investigación desarrollados
 
-> Acceder a la descripción completa del tema: **[Manejo de permisos a nivel de BD](./scripts/Manejo%20de%20permisos%20a%20nivel%20de%20BD/)**
+A continuación se da una breve descripcion de los temas investigados y desarrollados durante el proyecto y se brinda un link directo para ver la informacion detallada.
 
----
+### Tema 1: Procedimientos y funciones almacenadas
 
-## Optimización de consultas a través de índices
-Cómo los índices pueden acelerar las búsquedas, reducir el tiempo de respuesta y mejorar el rendimiento general del sistema. Tipos de índices, cuándo aplicarlos y una comparación práctica de su eficiencia.
-
-> Acceder a la descripción completa del tema: **[Optimización de consultas a través de índices](./scripts/Optimización%20de%20consultas%20a%20través%20de%20índices/)**
-
----
-
-## Procedimientos y funciones almacenadas
 Cómo los procedimientos almacenados automatizan tareas repetitivas, gestionan transacciones y mejoran el control de los datos; y cómo las funciones almacenadas facilitan cálculos y transformaciones en tiempo real.
 
-> Acceder a la descripción completa del tema: **[Procedimientos y funciones almacenadas](./script/Procedimientos%20y%20funciones%20almacenadas/)**
+> Acceder a la descripción completa del tema: **[Procedimientos y funciones almacenadas](./script/Procedimientos%20y%20funciones%20almacenadas/README.md)**
 
 ---
 
-## Triggers
+### Tema 2: Optimización de consultas a través de índices
+
+Cómo los índices pueden acelerar las búsquedas, reducir el tiempo de respuesta y mejorar el rendimiento general del sistema. Tipos de índices, cuándo aplicarlos y una comparación práctica de su eficiencia.
+
+> Acceder a la descripción completa del tema: **[Optimización de consultas a través de índices](./script/Optimización%20de%20consultas%20a%20través%20de%20índices/README.md)**
+
+---
+
+### Tema 3: Manejo de transacciones y transacciones anidadas
+
+Una transacción es una unidad única de trabajo. Si una transacción tiene éxito, todas las modificaciones de los datos realizadas durante la transacción se confirman y se convierten en una parte permanente de la base de datos. Si una transacción encuentra errores y debe cancelarse o revertirse, se borran todas las modificaciones de los datos.
+
+> Acceder a la descripción completa del tema: **[Manejo de transacciones y transacciones anidadas](./script/Manejo%20de%20transacciones%20y%20transacciones%20anidadas/README.md)**
+
+---
+
+### Tema 4: Triggers
+
 Cómo los triggers ayudan a automatizar auditorías, mantener reglas de negocio y reaccionar a cambios en tiempo real.
 
-> Acceder a la descripción completa del tema: **[Triggers](./script/Triggers/)**
+> Acceder a la descripción completa del tema: **[Triggers](./script/Triggers/README.md)**

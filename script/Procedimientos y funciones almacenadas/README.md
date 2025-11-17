@@ -1,4 +1,4 @@
-### Procedimientos y funciones almacenadas
+# Procedimientos y funciones almacenadas
 
 ## Introducción
 
@@ -15,6 +15,7 @@ En el caso de estudio de la concesionaria MercedesHugo, se implementaron procedi
 Un procedimiento almacenado es un bloque de instrucciones T-SQL que se guarda en el servidor de bases de datos y se ejecuta bajo demanda. Son ideales para centralizar la lógica de negocio, garantizando la integridad de los datos y reduciendo la repetición de código en las aplicaciones que interactúan con la base de datos.
 
 ## Ejemplo de Procedimiento: Alta de Cliente
+
 Este procedimiento encapsula la lógica de registrar un nuevo cliente en el sistema, evitando duplicaciones de código.
 
 ```sql
@@ -31,9 +32,11 @@ BEGIN
   VALUES (@dni, @nombre, @apellido, @telefono, @email);
 END;
 ```
+
 Con este procedimiento, se asegura que todos los registros de clientes se realicen de manera uniforme y segura.
 
 ## Ejemplo de Procedimiento: Registrar Venta de Vehículo
+
 En una concesionaria, registrar una venta es una de las operaciones más frecuentes. Para ello se implementó un procedimiento que toma los datos del cliente, el vehículo y el monto de la transacción.
 
 ```sql
@@ -53,6 +56,7 @@ BEGIN
   WHERE id_vehiculo = @id_vehiculo;
 END;
 ```
+
 Este procedimiento no solo registra la venta, sino que además actualiza el estado del vehículo, asegurando consistencia en el inventario.
 
 ## ¿Qué es una función almacenada?
@@ -71,6 +75,7 @@ BEGIN
   RETURN (YEAR(GETDATE()) - @anioFabricacion);
 END;
 ```
+
 Con esta función, en una consulta se puede obtener la antigüedad de cada vehículo:
 
 ```sql
@@ -79,6 +84,7 @@ FROM Vehiculos;
 ```
 
 ## Ejemplo de Función: Calcular Edad de un Cliente
+
 Facilita la obtención automática de la edad de los clientes en base a su fecha de nacimiento.
 
 ```sql
@@ -89,6 +95,7 @@ BEGIN
   RETURN DATEDIFF(YEAR, @fechaNacimiento, GETDATE());
 END;
 ```
+
 Esto permite generar reportes con información actualizada de clientes:
 
 ```sql

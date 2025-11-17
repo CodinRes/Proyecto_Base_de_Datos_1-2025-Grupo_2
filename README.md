@@ -10,6 +10,11 @@ Este espacio propone presentar la información para organizar el desarrollo del 
 		esquema_relacional_distribuidora.png
 		diccionario_datos.pdf
     script/ (capeta de código del proyecto)
+	    Procedimientos y funciones almacenadas/
+		    README.md
+		Triggers/
+		    README.md
+			script.sql
 	    script_ddl_proyecto_distribuidora.sql
 		script_insert_proyecto.sql
     ARIMA.md (documento principal estructurado por capítulos)

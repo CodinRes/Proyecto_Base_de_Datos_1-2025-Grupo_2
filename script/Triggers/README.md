@@ -1,13 +1,13 @@
-#  TRIGGERS
+# TRIGGERS
 
-##  Caso de estudio  
+## Caso de estudio  
 
 El objetivo de esta sección es documentar y proveer **triggers** para el proyecto (dominio de distribuidora: `Producto`, `Stock`, `Venta` / `DetalleVenta`, `Proveedor`, etc.).  
 Los triggers se utilizan para **auditar cambios** y **hacer cumplir reglas de negocio**, como actualizar stock al vender o impedir borrados físicos.
 
 ---
 
-##  Definición  
+## Definición  
 
 Un **trigger** es un objeto de base de datos que se ejecuta automáticamente ante operaciones `INSERT`, `UPDATE` o `DELETE` sobre una tabla.  
 En este proyecto (SQL Server / T-SQL) se emplean para:
@@ -18,7 +18,7 @@ En este proyecto (SQL Server / T-SQL) se emplean para:
 
 ---
 
-##  Buenas prácticas adoptadas  
+## Buenas prácticas adoptadas  
 
 - **Nombres:** `TRG_<Tabla>_<Acción>_<Propósito>`  
 - **Operar por conjuntos:** no asumir una sola fila afectada.  
@@ -27,7 +27,7 @@ En este proyecto (SQL Server / T-SQL) se emplean para:
 
 ---
 
-##  Tablas de soporte (Auditoría)  
+## Tablas de soporte (Auditoría)  
 
 Estas tablas almacenan los valores anteriores a un `UPDATE` o `DELETE`.  
 Ajustar tipos o columnas si el DDL del proyecto difiere.
@@ -50,9 +50,11 @@ END;
 GO
 
 ```
-##  Ejemplos de TRIGGERS
+
+## Ejemplos de TRIGGERS
 
 ### 1) Auditoría en **Producto** (UPDATE)
+
 Guarda los valores previos cuando se actualizan campos relevantes.
 
 ```sql
@@ -76,6 +78,7 @@ GO
 ```
 
 ### 2) Auditoría en Producto (DELETE)
+
 Registra la información antes de eliminar un producto.
 
 ```sql
@@ -95,8 +98,10 @@ GO
 ```
 
 ## 3) Actualización de Stock al insertar en DetalleVenta
+
 Descuenta automáticamente el stock de los productos vendidos.
 Si el resultado es negativo, revierte la transacción.
+
 ```sql
 CREATE OR ALTER TRIGGER dbo.TRG_DetalleVenta_INSERT_DescuentaStock
 ON dbo.DetalleVenta
@@ -126,7 +131,9 @@ GO
 ```
 
 ## 4) Soft-delete en Proveedor
+
 Evita el borrado físico y marca la columna activo = 0.
+
 ```sql
 CREATE OR ALTER TRIGGER dbo.TRG_Proveedor_INSTEADOF_DELETE_Soft
 ON dbo.Proveedor
@@ -162,4 +169,3 @@ DELETE FROM dbo.Proveedor WHERE id_proveedor = 10;
 SELECT TOP 10 * FROM dbo.AuditoriaProducto ORDER BY fecha_evento DESC;
 
 ```
-

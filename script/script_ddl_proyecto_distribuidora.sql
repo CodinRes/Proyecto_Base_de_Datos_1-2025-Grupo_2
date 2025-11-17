@@ -41,7 +41,7 @@ CREATE TABLE categoria_negocio
   CONSTRAINT pk_categoria_negocio PRIMARY KEY (categoria_id),
   CONSTRAINT uq_categoria_negocio_descripcion UNIQUE (descripcion),
   CONSTRAINT ck_categoria_negocio_descripcion CHECK (LTRIM(RTRIM(descripcion)) <> ''),
-  CONSTRAINT ck_categoria_negocio_descrip CHECK (descripcion IN ('Peque�o', 'Mediano', 'Grande'))
+  CONSTRAINT ck_categoria_negocio_descrip CHECK (descripcion IN ('Pequeño', 'Mediano', 'Grande'))
 
 
 );
@@ -52,7 +52,7 @@ CREATE TABLE estado
   descripcion VARCHAR (20) COLLATE Latin1_General_CI_AI NOT NULL,
   CONSTRAINT pk_estado PRIMARY KEY (estado_id),
   CONSTRAINT uq_estado_descripcion UNIQUE (descripcion),
-  CONSTRAINT ck_estado_descripcion CHECK (descripcion IN ('Pendiente', 'En preparaci�n', 'Entregado', 'Cancelado', 'Retrasado'))
+  CONSTRAINT ck_estado_descripcion CHECK (descripcion IN ('Pendiente', 'En preparación', 'Entregado', 'Cancelado', 'Retrasado'))
 );
 
 CREATE TABLE metodo_pago
@@ -61,7 +61,7 @@ CREATE TABLE metodo_pago
   descripcion VARCHAR (20) COLLATE Latin1_General_CI_AI NOT NULL,
   CONSTRAINT pk_metodo_pago PRIMARY KEY (metodo_id),
   CONSTRAINT uq_metodo_pago_descripcion UNIQUE (descripcion),
-  CONSTRAINT ck_metodo_pago_descripcion CHECK (descripcion IN ('Efectivo', 'Transferencia', 'Tarjeta Cr�dito', 'Tarjeta D�bito'))
+  CONSTRAINT ck_metodo_pago_descripcion CHECK (descripcion IN ('Efectivo', 'Transferencia', 'Tarjeta Crédito', 'Tarjeta Débito'))
 
 );
 
