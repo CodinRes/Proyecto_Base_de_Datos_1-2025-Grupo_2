@@ -151,6 +151,44 @@ CREATE NONCLUSTERED INDEX IX_ProductVendor_VendorID
 GO
 ```
 
+## Pruebas
+
+En las siguientes imágenes se puede ver la diferencia en eficiencia al realizar una consulta con y sin índice nonclustered sobre la tabla `cliente` con 1.000.000 de filas insertadas con el script [Optimización de consultas a través de índices](../crear_muchos.sql) y con el [ejemplo de índices](./indices.sql).
+
+La consulta utilizada fue:
+
+```sql
+SELECT  [cliente_id]
+      , [zona_id]
+      , [categoria_id]
+      , [ciudad_id]
+FROM [dbo].[cliente];
+```
+
+como se podrá ver en las diferencias entre las imágenes, el Costo de E/S estimado, Costo de operador estimado, Costo de subárbol estimado en la examinación de Clustered Index Scan y el Costo de subárbol estimado en SELECT son mayores, mientras que en Nivel de optimización en SELECT dice FULL sin el índice, y TRIVIAL con el índice colocado. Los costos de ejecución estimados en Index Scan (NonClustered) son menores.
+
+### Sin índice nonclustered
+
+![prueba sin índice](./Prueba%20de%20SELECT%20sin%20indices.png)
+
+En este caso el optimizador utiliza un Clustered Index Scan sobre la clave primaria pk_cliente. Como no existe un índice específico que contenga las columnas de la consulta, debe recorrer todo el índice clustered, que tiene todas las columnas de la fila.
+Esto produce:
+
+Nivel de optimización: FULL, el optimizador debe explorar más alternativas de plan.
+Costo de E/S estimado, costo de operador y costo de subárbol estimado más altos, porque se leen más páginas de datos (filas más “anchas”).
+
+### Con índice nonclustered
+
+![prueba con índice](./Prueba%20de%20SELECT%20con%20indices.png)
+
+Con este índice el optimizador puede resolver la consulta leyendo solo el índice nonclustered, cuya estructura es más liviana (menos columnas) que el índice clustered. El plan cambia a un Index Scan (NonClustered) y se observan las siguientes diferencias:
+
+Nivel de optimización: TRIVIAL, el optimizador detecta rápidamente que usar este índice es la mejor opción, sin necesidad de una búsqueda compleja de planes.
+Menor Costo de E/S estimado, costo de operador estimado y costo de subárbol estimado, porque las páginas del índice nonclustered contienen menos datos por fila.
+Aunque en la prueba la consulta devuelve 1.000.000 de filas (no hay WHERE), y por eso el tiempo total de ejecución es similar, el motor considera más barato leer un índice nonclustered que el índice clustered completo.
+
+De acuerdo con la teoría, si la consulta tuviera filtros selectivos sobre las columnas indexadas (por ejemplo WHERE zona_id = 5 AND categoria_id = 2), el optimizador podría usar un Index Seek en lugar de un Scan, leyendo solo una parte del índice y reduciendo mucho más la E/S y el tiempo de respuesta.
+
 ## Referencias
 
 <https://learn.microsoft.com/es-es/sql/relational-databases/indexes/clustered-and-nonclustered-indexes-described?view=sql-server-ver17>
